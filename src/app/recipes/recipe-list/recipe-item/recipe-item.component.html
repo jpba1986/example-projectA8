@@ -1,5 +1,7 @@
-<div class="col col-xs-12">
-        <a href="#" class="list-group-item clearfix">
+
+        <a href="#" class="list-group-item clearfix"
+        (click) ="onSelected()"
+        >
             <div class="pull-left">
                 <h4 class="list-group-item-heading">{{ recipe.name }}</h4>
                 <p class="list-group-item-text">{{recipe.description}}</p>
@@ -10,4 +12,4 @@
             </span>
         </a>
            
-        </div>
+     
