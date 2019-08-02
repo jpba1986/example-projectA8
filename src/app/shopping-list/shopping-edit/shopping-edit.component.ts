@@ -32,10 +32,6 @@ constructor(private slService: ShoppingListService) { }
       });
   }
 
-  ngOnDestroy(){
-    this.subscription.unsubscribe();
-  }
-
   onSubmit(form : NgForm){
     const value = form.value;    
     const newIngredient = new Ingredient(value.name, value.amount);     
@@ -46,5 +42,14 @@ constructor(private slService: ShoppingListService) { }
     }  
     this.editMode = false;
     form.reset();  
+  }
+
+  onClear(){
+    this.slForm.reset();
+    this.editMode = false;
+  }
+
+  ngOnDestroy(){
+    this.subscription.unsubscribe();
   }
 }
