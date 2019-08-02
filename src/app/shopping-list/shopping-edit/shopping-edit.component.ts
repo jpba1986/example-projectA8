@@ -36,13 +36,15 @@ constructor(private slService: ShoppingListService) { }
     this.subscription.unsubscribe();
   }
 
-  onAddItem(form : NgForm){
+  onSubmit(form : NgForm){
     const value = form.value;    
     const newIngredient = new Ingredient(value.name, value.amount);     
     if (this.editMode){
       this.slService.updateIngredient(this.editedItemIndex, newIngredient);
     }else{
       this.slService.addIngredient(newIngredient);
-    }    
+    }  
+    this.editMode = false;
+    form.reset();  
   }
 }
