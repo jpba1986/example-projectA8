@@ -8,7 +8,7 @@ import { Subject } from 'rxjs';
 export class RecipeService {
     recipesChanged = new Subject<Recipe[]>();
 
-    private recipes:Recipe[] = [
+/*     private recipes:Recipe[] = [
         new Recipe(
             'Test Recipe',
             ' its a test','https://cdn.pixabay.com/photo/2015/10/26/07/21/soup-1006694_960_720.jpg',
@@ -23,8 +23,9 @@ export class RecipeService {
                 new Ingredient('Buns',2),
                 new Ingredient('Meat',2)
             ])
-      ];
+      ]; */
 
+      private recipes:Recipe[] = [];
       constructor(private slService: ShoppingListService ){}
 
       setRecipes(recipes: Recipe[]){
