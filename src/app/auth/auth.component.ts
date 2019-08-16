@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { AuthService, AuthResponseData } from './auth.service';
 import { Observable } from 'rxjs';
 
+// https://firebase.google.com/docs/reference/rest/auth#section-sign-in-email-password
 @Component({
     selector: 'app-auth',
     templateUrl: './auth.component.html'
@@ -17,9 +18,6 @@ export class AuthComponent{
     onSwitchMode(){
         this.isLoginMode = !this.isLoginMode;
     }
-
-
-
 
     onSubmit(form: NgForm){
         if (!form.valid){
